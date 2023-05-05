@@ -8,20 +8,11 @@ public class Main {
 
         /** change all input to lowercase to handle Lowercase and Uppercase. Point no. 3 **/
         s = s.toLowerCase();
+
         for (int i = 0; i < n; i++) {
             for (int j = i; j < n; j++) {
                 String sub = s.substring(i, j + 1);
-                boolean isPalindrome = true;
-
-                int k = 0, v = sub.length() - 1;
-                while (k < v) {
-                    if (sub.charAt(k) != sub.charAt(v)) {
-                        isPalindrome = false;
-                    }
-                    k++;
-                    v--;
-                }
-                if (isPalindrome && (res.length() == 0 || sub.length() > res.length())) {
+                if (isPalindrome(sub) && (res.length() == 0 || sub.length() > res.length())) {
                     res = sub;
                 }
             }
